@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+  --background-color: #f5ebeb;
+  --sakura-background: #c790998e;
+  --button-color: #63195667;
+  --button-secondary: #9c5d90a2;
+  --spacing: 28px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 250px;
+  grid-gap: var(--spacing);
+  padding: var(--spacing);
+  background-color: var(--background-color);
+}
+
+.grid-container {
+  text-align: center;
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  border-radius: 2%;
+  width: 100%;
+  padding:var(--spacing);
+}
+
+.grid-container img {
+  max-width: 100%;
+  border-radius: 2%;
+}
+
+header {
+  font-size: auto;
+  display: grid;
+  grid-row: 1 / 3;
+  background-color: var(--sakura-background);
+}
+
+header > h1 {
+  text-transform: uppercase;
+  font-size: auto;
+  text-align: center;
+  margin-bottom: var(--spacing);
+}
+
+header p {
+  font-size: auto;
+  margin: var(--spacing);
+}
+
+.sakura {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.cherry {
+  grid-column: 3 / 4; 
+  grid-row: 1 / 2;
+}
+
+main {
+  font-size: auto;
+  text-align: center;
+  background-color: var(--sakura-background);
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  padding: var(--spacing)
+}
+
+main h2 {
+  font-size: auto;
+  margin: var(--spacing);
+}
+.flower {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.blossom {
+  grid-column: 1 / 2;
+  grid-row:  3 / 4;
+}
+
+footer {
+  display: grid;
+  font-size: auto;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  background-color: var(--sakura-background);
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+  border-radius: 2%;
+  padding: var(--spacing);
+}
+
+footer h3 {
+  font-size: auto;
+  margin: var(--spacing);
+}
+
+footer p {
+  font-size: auto;
+  margin: var(--spacing);
+}
+
+button {
+  background-color: var(--button-color);
+  color: var(--primary-color);
+  padding: 10px 20px;
+  font-size: auto;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: auto;
+  margin: 0 auto;
+  text-align: center;
+  border: none;
+}
+
+button:hover {
+  background-color: var(--button-secondary);
+}
+
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto; 
+    gap: var(--spacing);
+  }
+  .grid-container, header, .sakura, .blossom, .cherry, .flower, footer{
+    grid-column: 1 / 3;
+    grid-row: auto;
+  }
+}
