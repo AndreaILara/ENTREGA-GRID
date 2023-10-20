@@ -17,133 +17,102 @@
   font-family: 'Roboto', sans-serif;
 }
 
-body {
+body{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 250px;
+  grid-auto-rows: 290px;
   grid-gap: var(--spacing);
-  padding: var(--spacing);
   background-color: var(--background-color);
-}
-
-.grid-container {
-  text-align: center;
-  display: grid;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  justify-items: center;
-  border-radius: 2%;
-  width: 100%;
-  padding:var(--spacing);
-}
-
-.grid-container img {
-  max-width: 100%;
-  border-radius: 2%;
+  color: var(--primary-color);
+  margin: 30px;
 }
 
 header {
-  font-size: auto;
+  grid-row: 1/3;
   display: grid;
-  grid-row: 1 / 3;
   background-color: var(--sakura-background);
 }
 
 header > h1 {
   text-transform: uppercase;
-  font-size: auto;
   text-align: center;
-  margin-bottom: var(--spacing);
+  font-size: 20px;
 }
 
-header p {
-  font-size: auto;
-  margin: var(--spacing);
-}
-
-.sakura {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-}
-
-.cherry {
-  grid-column: 3 / 4; 
-  grid-row: 1 / 2;
-}
-
-main {
-  font-size: auto;
-  text-align: center;
-  background-color: var(--sakura-background);
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  padding: var(--spacing)
-}
-
-main h2 {
-  font-size: auto;
-  margin: var(--spacing);
-}
-.flower {
-  grid-column: 3 / 4;
-  grid-row: 2 / 3;
-}
-
-.blossom {
-  grid-column: 1 / 2;
-  grid-row:  3 / 4;
-}
-
+header,
+main,
 footer {
-  display: grid;
-  font-size: auto;
-  text-align: center;
-  align-items: center;
-  align-content: center;
-  background-color: var(--sakura-background);
-  grid-column: 2 / 4;
-  grid-row: 3 / 4;
-  border-radius: 2%;
   padding: var(--spacing);
 }
 
-footer h3 {
-  font-size: auto;
-  margin: var(--spacing);
-}
-
-footer p {
-  font-size: auto;
-  margin: var(--spacing);
-}
 
 button {
   background-color: var(--button-color);
   color: var(--primary-color);
-  padding: 10px 20px;
+  padding: 1%;
   font-size: auto;
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: auto;
-  margin: 0 auto;
+  max-width:max-content;
   text-align: center;
   border: none;
+  text-transform: uppercase;
 }
 
 button:hover {
   background-color: var(--button-secondary);
 }
 
-@media (max-width: 768px) {
+.sakura{
+  background-image: url(https://www.amigastronomicas.com/wp-content/uploads/2009/03/flor-sakura-cerezos-japon-copyright-amigastronomicas.jpg);
+}
+
+.cherry{
+  background-image: url(https://s3.voyapon.com/wp-content/uploads/sites/3/2021/01/27070019/Matsuda5_mariaPenascal-scaled.jpeg);
+}
+  
+.flower{
+  background-image: url(https://estaticos-cdn.elperiodico.com/clip/f3d94685-7198-4b5a-b7ad-ec4b89682825_alta-libre-aspect-ratio_default_0.jpg);
+}
+.blossom{
+  background-image: url(https://1.bp.blogspot.com/-x3K0Sr_IvpQ/T1Jrz0nRChI/AAAAAAAAAXA/L5whkB6Kwk8/s640/sakura+matsu+nagao.JPG);
+}
+
+.sakura,
+.cherry,
+.flower,
+.blossom {
+  background-size: cover;
+}
+
+main {
+  background-color: var(--sakura-background);
+  color: var(--primary-color);
+  display: grid;
+}
+main > h2 {
+  text-transform: uppercase;
+  font-size: 20px;
+  margin: auto;
+  text-align: center;
+}
+
+footer {
+  grid-column: 2/4;
+  display: grid;
+  background-color: var(--sakura-background);
+  color: var(--primary-color);
+}
+
+@media (max-width: 700px) {
   body {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto; 
-    gap: var(--spacing);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 300px);
+    width: 100%;
   }
-  .grid-container, header, .sakura, .blossom, .cherry, .flower, footer{
-    grid-column: 1 / 3;
-    grid-row: auto;
+  footer{
+    grid-column: 1;
   }
+
 }
